@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🌙 Dream Journal</title>
+<style>
+body{font-family:Arial;background:#000;color:#aaf;padding:40px;text-align:center;}
+</style>
+</head>
+<body>
+<h1>Dream Journal</h1>
+<textarea id="dream" placeholder="Describe your dream..."></textarea><br>
+<button onclick="saveDream()">Save Dream</button>
+<div id="dreams"></div>
+<script>
+let dreams=[];
+function saveDream(){
+  const d=document.getElementById('dream').value.trim();
+  if(!d)return;
+  dreams.unshift({date:new Date().toLocaleDateString(),text:d});
+  renderDreams();
+  document.getElementById('dream').value='';
+}
+function renderDreams(){
+  document.getElementById('dreams').innerHTML=dreams.map(dm=>`<div style="background:#111;padding:15px;margin:10px;">${dm.date}<br>${dm.text}</div>`).join('');
+}
+</script>
+</body>
+</html>
