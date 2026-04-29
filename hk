@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🤔 Would You Rather</title>
+<style>
+body{font-family:Arial;background:#111;color:#fff;padding:60px;text-align:center;}
+</style>
+</head>
+<body>
+<h1>Would You Rather...</h1>
+<button onclick="showQ()">New Question</button>
+<div id="q" style="font-size:26px;margin:50px;max-width:600px;"></div>
+<script>
+const qs=["...always be 10 minutes late or always 20 minutes early?","...have the ability to fly or be invisible?"];
+function showQ(){
+  document.getElementById('q').textContent=qs[Math.floor(Math.random()*qs.length)];
+}
+</script>
+</body>
+</html>
